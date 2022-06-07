@@ -2,15 +2,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Figuras geometricas | Curso practico JavaScript</title>
+    <title>Figuras geometricas | Calculadora basica</title>
+    <style>
+        :root {
+            --white: #ffffff;
+            --black: #000000;
+            --grey: #808080;
+            --sm: 14px;
+            --md: 16px;
+            --lg: 18px;
+        }
+        body {
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+            display: grid;
+            grid-template-rows: auto auto;
+        }
+        .figuras {
+            display: grid;
+            grid-template-columns: auto auto auto;
+        }
+        .encabezado {
+            align-items: center;
+            text-align: center;
+            background-color: var(--grey);
+            border-bottom: 1px solid var(--black);
+            margin: 2px;
+            border-radius: 5px;
+        }
+        .figura {
+            border: 1px solid var(--white);
+            background-color: var(--grey);
+            border-radius: 5px;
+            margin: 2px;
+            text-align: center;
+        }
+        .figura input{
+            background-color: dimgray;
+            color: var(--white);
+            margin: 4px 0;
+            padding: 0;
+        }
+        .figura button{
+            background-color: dimgray;
+            color: var(--white);
+            font-size: var(--sm);
+            border: 1px solid dimgray ;
+            border-radius: 10px;
+            margin-top: 4px;
+            margin-bottom: 3px;
+            cursor: pointer;
+        }
+        @media (min-width: 640px) {
+            body {
+                display: grid;
+                grid-template-rows: auto auto;
+                grid-template-columns: 640px;
+                justify-content: center;
+            }            
+        }
+
+    </style>
 </head>
 <body>
-    <h1>
-        Figuras geometricas
-    </h1>
+    <header class="encabezado">
+        <h1>
+            Calculadora básica de perímetro y área
+        </h1>
+        <p> Aquí podrás calcular el perimetro y el area de las figuras geometricas 
+            más básicas como lo son el triangulo, cuadrado y circulo.
+        </p>
+    </header>
+
+    <div class="figuras">
+        <section class="figura">
+            <h2>Cuadrado</h2>
+            <form>
+                <label for="inputCuadrado"> Escribe cuánto mide cada lado de tu cuadrado:</label>
+                <input id="inputCuadrado" type="number"> 
+                <button type="button" onclick="calcularPerimetroCuadrado()"> Calcular el perimetro</button>
+                <button type="button" onclick="calcularAreaCuadrado()"> Calcular el area</button>
+            </form>
+        </section>
+
+        <section class="figura">
+            <h2>Triangulo</h2>
+            <form>
+                <label for="inputTrianguloIzquierdo"> Escribe cuánto mide el lado izquierdo de tu triangulo:</label>
+                <input id="inputTrianguloIzquierdo" type="number"> 
+                <label for="inputTrianguloDerecho"> Escribe cuánto mide el lado derecho de tu triangulo:</label>
+                <input id="inputTrianguloDerecho" type="number">
+                <label for="inputTrianguloBase"> Escribe cuánto mide la base de tu triangulo:</label>
+                <input id="inputTrianguloBase" type="number">
+                <label for="inputTrianguloAltura"> Escribe la altura de tu triangulo:</label>
+                <input id="inputTrianguloAltura" type="number">
+                <button type="button" onclick="calcularPerimetroTriangulo()"> Calcular el perimetro</button>
+                <button type="button" onclick="calcularAreaTriangulo()"> Calcular el area</button>
+            </form>
+        </section>
+
+        <section class="figura">
+            <h2>Circulo</h2>
+            <form>
+                <label for="inputCirculo"> Escribe Cúal es el radio de tu circulo:</label>
+                <input id="inputCirculo" type="number"> 
+                <button type="button" onclick="calcularPerimetroCirculo()"> Calcular el perimetro</button>
+                <button type="button" onclick="calcularAreaCirculo()"> Calcular el area</button>
+            </form>
+        </section>
+    </div>
     <script src="./figuras.js"></script>
 </body>
 </html>
