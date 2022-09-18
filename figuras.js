@@ -11,6 +11,8 @@ function areaCuadrado(lado) {
 
 console.groupEnd();
 
+//Hola mundo
+
 
 // Formulas del triangulo
 console.group("Triangulos");
@@ -95,6 +97,7 @@ function calcularAreaCirculo() {
     alert("El area del circulo es: "+area+"cm^2")
 }
 
+//hola mundo
 
 
 
